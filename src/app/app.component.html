@@ -1,0 +1,29 @@
+<p>
+  <strong
+    [class.male]="customer.gender === 'M'"
+    [class.female]="customer.gender === 'F'"
+    >
+ {{customer.name}}
+  </strong>
+</p>
+
+<p>
+  <strong
+    [style.color]="customer.gender === 'F' ? 'blue' : 'pink'">
+ {{customer.name}}
+  </strong>
+</p>
+
+<p>
+
+{{customer?.name }} is {{customer?.ages}} is {{customer?.gender}}
+</p>
+
+<!---show customer name inside input box-->
+<input type="text" value="{{customer?.name }}">
+<input type="text" [value]="customer?.name">
+<input type="text" [(ngModel)]="customer.name">
+<button (click)="alert(customer.name)">Alert</button>
+
+<button (click)="changeGender('M')">Male</button>
+<button (click)="changeGender('F')">Female</button>
